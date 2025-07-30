@@ -94,6 +94,18 @@ body {
   --btn-hover: #0056b3;
 }
 
+/* QUESTION‑SPECIFIC IMAGE STYLING */
+.question-image {
+  display: block;
+  margin: 1.5rem auto;        /* center & give some breathing room */
+  max-width: 70%;             /* don’t overwhelm the card */
+  height: auto;
+  border-radius: 0.5rem;      /* match your card corners */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  background: var(--light-bg);
+  padding: 0.5rem;
+}
+
 /* Quiz Container */
 .quiz-container {
   background: #ffffff;
