@@ -8,52 +8,41 @@
     <div id="site-header-placeholder"></div>
 
     <main class="quiz-container">
-      <div class="question-section">
-        <h3 id="question-text">Is the kid running fast or slow?</h3>
+  <div class="question-section">
+    <h3 id="question-text">Loading…</h3>
+    <ul id="options-list" class="options"></ul>
+  </div>
 
+  <div id="feedback" class="hidden"></div>
+  <div id="explanation" class="hidden"></div>
+  <button id="back-btn" class="hidden">Back</button>
+  <button id="next-btn" class="hidden">Next</button>
+</main>
 
-        <!-- ② options list (populated by your script.js) -->
-        <ul id="options-list" class="options"></ul>
-      </div>
-
-    <!-- Quiz Content -->
-    <main class="quiz-container">
-      <div class="question-section">
-        <h3 id="question-text">Loading...</h3>
-        <ul class="options" id="options-list">
-          <!-- Options dynamically generated -->
-        </ul>
-      </div>
-      <div id="feedback" class="hidden"></div>
-      <div id="explanation" class="hidden"></div>
-      <button id="back-btn" class="hidden" onclick="loadPreviousQuestion()">Back</button>
-      <button id="next-btn" class="hidden" onclick="loadNextQuestion()">Next</button>
-    </main>
 
     <!-- your question data: only one entry -->
+
     <script>
       const questions = [
-        {
-          question: "Select the sentence that matches best with the picture?",
-          image: "../../../image/Identify level 1 eng/fast image.jpg.png",              // we already put the text in the <h3>
-          options: ["Fast", "Slow"], 
-          correct: "Fast",
-          explanation:
-            "Because the kid is shown moving Fast, “Fast” is the right answer."
-        },
-
-        {
-          question: "Select the sentence that matches best with the picture?", 
-          image: "../../../image/Identify level 1 eng/kid lifting stone.jpeg",             // we already put the text in the <h3>
-          options: ["I am very sorry", "I am very strong"], 
-          correct: "I am very strong",
-          explanation:
-            "Because the kid is lifting heavy stones, “I am very strong” is the right answer."
-        }
-        
-      ];
+  {
+    question: "Is the kid running fast or slow?",
+    image: "../../../image/Identify level 1 eng/fast image.jpg.png",
+    options: ["Fast", "Slow"],
+    correct: "Fast",
+    explanation:
+      "Because the kid is shown moving fast, “Fast” is the right answer."
+  },
+  {
+    question: "Is the kid strong or weak?",
+    image: "../../../image/Identify level 1 eng/kid lifitng stone.jpeg",
+    options: ["Strong", "Weak"],
+    correct: "Strong",
+    explanation:
+      "Because the kid is lifting a heavy stone, “Strong” is the right answer."
+  },
+  // …and so on
+];
     </script>
-
     <script src="../../../js/script.js"></script>
     <script src="../../../js/partials.js"></script>
   </body>

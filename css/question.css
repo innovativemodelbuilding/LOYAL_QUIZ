@@ -97,14 +97,16 @@ body {
 /* QUESTION‑SPECIFIC IMAGE STYLING */
 .question-image {
   display: block;
-  margin: 1.5rem auto;        /* center & give some breathing room */
-  max-width: 70%;             /* don’t overwhelm the card */
-  height: auto;
-  border-radius: 0.5rem;      /* match your card corners */
+  margin: 1.5rem auto;        /* center & breathing room */
+  width: 400px;               /* fixed width */
+  height: 300px;              /* fixed height */
+  object-fit: contain;        /* or “cover” if you want to crop to fill */
+  border-radius: 0.5rem;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   background: var(--light-bg);
   padding: 0.5rem;
 }
+
 
 /* Quiz Container */
 .quiz-container {

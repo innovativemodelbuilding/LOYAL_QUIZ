@@ -11,12 +11,32 @@ const nextBtn        = document.getElementById("next-btn");
 const backBtn        = document.getElementById("back-btn");
 const optionLabels   = ["A", "B", "C", "D"];
 
+// ▶️ CREATE a single <img> slot and stick it above the question text
+const questionSection = document.querySelector(".question-section");
+const questionImage   = document.createElement("img");
+questionImage.className = "question-image hidden";  // hidden by default
+questionSection.insertBefore(questionImage, questionText);
+
 // -------------------- Quiz Logic --------------------
 
 loadQuestion();
 
 function loadQuestion() {
   const question = questions[currentQuestionIndex];
+
+  // ——— HANDLE IMAGE ———
+  if (question.image) {
+    questionImage.src = question.image;
+    questionImage.alt = question.alt || "";
+    questionImage.classList.remove("hidden");
+  } else {
+    questionImage.classList.add("hidden");
+  }
+
+  // show back button only after Q1
+  if (currentQuestionIndex > 0) backBtn.classList.remove("hidden");
+  else backBtn.classList.add("hidden");
+  
   questionText.innerHTML   = question.question;
   optionsList.innerHTML    = "";
   feedbackDiv.classList.add("hidden");
@@ -98,7 +118,7 @@ function setIcon(iconId, type) {
   let currentQuestionIndex = 0;
   let correctCount = 0;  // ← track correct answers
 
-  // Elements
+  // Elements (re-select inside IIFE)
   const questionText   = document.getElementById("question-text");
   const optionsList    = document.getElementById("options-list");
   const feedbackDiv    = document.getElementById("feedback");
@@ -112,6 +132,16 @@ function setIcon(iconId, type) {
 
   function loadQuestion() {
     const question = questions[currentQuestionIndex];
+
+    // ——— HANDLE IMAGE ———
+    if (question.image) {
+      questionImage.src = question.image;
+      questionImage.alt = question.alt || "";
+      questionImage.classList.remove("hidden");
+    } else {
+      questionImage.classList.add("hidden");
+    }
+
     questionText.innerHTML   = question.question;
     optionsList.innerHTML    = "";
     feedbackDiv.classList.add("hidden");
@@ -132,7 +162,6 @@ function setIcon(iconId, type) {
   }
 
   function checkAnswer(selectedOption, chosen, correct, iconId) {
-    // disable further clicks
     document.querySelectorAll("#options-list li").forEach(li => li.onclick = null);
 
     let messageText, messageColor, messageEmoji;
@@ -150,7 +179,6 @@ function setIcon(iconId, type) {
       messageColor = "red";
       messageEmoji = "😭";
 
-      // reveal correct
       document.querySelectorAll("#options-list li").forEach((li, idx) => {
         if (li.querySelector(".option-text").textContent === correct) {
           li.classList.add("correct");
@@ -159,16 +187,13 @@ function setIcon(iconId, type) {
       });
     }
 
-    // show feedback message
     feedbackDiv.innerHTML = `<span>${messageText}</span>`;
     feedbackDiv.style.color = messageColor;
     feedbackDiv.classList.remove("hidden");
 
-    // show explanation
     explanationDiv.innerHTML = `<strong>Solution:</strong><br>${questions[currentQuestionIndex].explanation}`;
     explanationDiv.classList.remove("hidden");
 
-    // next button & emoji rain
     nextBtn.classList.remove("hidden");
     addEmojiRain(messageEmoji, 20);
   }
@@ -193,38 +218,30 @@ function setIcon(iconId, type) {
     }
   }
 
-// -------------------- Completion Screen --------------------
-function showCompletionScreen() {
-  // 1) Build the score screen
-  const total = questions.length;
-  questionText.innerHTML = `
-    <div class="completion-message" style="text-align:center; padding:2rem;">
-      <h2>🎉 Quiz Completed! 🎉</h2>
-      <p style="font-size:1.4rem; margin:1rem 0;">
-        Your Score: <strong>${correctCount} / ${total}</strong>
-      </p>
-      <button id="home-btn" class="btn-home">Home</button>
-    </div>
-  `;
+  // -------------------- Completion Screen --------------------
+  function showCompletionScreen() {
+    const total = questions.length;
+    questionText.innerHTML = `
+      <div class="completion-message" style="text-align:center; padding:2rem;">
+        <h2>🎉 Quiz Completed! 🎉</h2>
+        <p style="font-size:1.4rem; margin:1rem 0;">
+          Your Score: <strong>${correctCount} / ${total}</strong>
+        </p>
+        <button id="home-btn" class="btn-home">Home</button>
+      </div>
+    `;
 
-  // 2) Clear out the old quiz UI
-  optionsList.innerHTML     = "";
-  feedbackDiv.textContent   = "";
-  explanationDiv.textContent = "";
+    optionsList.innerHTML      = "";
+    feedbackDiv.textContent    = "";
+    explanationDiv.textContent = "";
+    explanationDiv.classList.add("hidden");
+    nextBtn.style.display = "none";
+    backBtn.style.display = "none";
 
-  // 2a) Hide the explanation box completely
-  explanationDiv.classList.add("hidden");
-
-  // 3) Hide Next + Back buttons completely
-  nextBtn.style.display = "none";
-  backBtn.style.display = "none";
-
-  // 4) Home button goes back to your landing page
-  document.getElementById("home-btn").addEventListener("click", () => {
-    window.location.href = window.location.origin + "/index.html";
-  });
-}
-
+    document.getElementById("home-btn").addEventListener("click", () => {
+      window.location.href = window.location.origin + "/index.html";
+    });
+  }
 })();
 
 // -------------------- Emoji Rain --------------------
@@ -255,5 +272,3 @@ function addEmojiRain(emoji, count = 30) {
     if (container.childElementCount === 0) container.remove();
   }, 5000);
 }
-
-
