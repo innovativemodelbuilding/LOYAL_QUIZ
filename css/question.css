@@ -37,7 +37,7 @@ body {
   color: #fd2828;
 }
 .site-header .logo-text {
-  font-family: 'Comic Sans MS', cursive;
+  font-family: 'Comic Sans MS';
   font-size: 1.6rem;
   font-weight: bold;
 }
