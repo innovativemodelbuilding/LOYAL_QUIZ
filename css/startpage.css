@@ -45,7 +45,7 @@ body {
   color: #fd2828;
 }
 .site-header .logo-text {
-  font-family: 'Comic Sans MS', cursive;
+  font-family: 'Comic Sans MS';
   font-size: 1.6rem;
   font-weight: bold;
 }
@@ -257,7 +257,7 @@ main.startpage .card:nth-child(7n+7) { --card-color: #5c6bc0; } /* indigo */
   padding-bottom: 1.5rem;
 }
 .site-footer .footer-section h4 {
-  font-family: 'Comic Sans MS', cursive;
+  font-family: 'Comic Sans MS';
   font-size: 1.3rem;
   color: #fd2828;
   margin-bottom: 0.75rem;

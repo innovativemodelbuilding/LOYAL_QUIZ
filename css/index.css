@@ -945,7 +945,7 @@ button:hover {
 }
 
 .site-footer .footer-section h4 {
-  font-family: 'Comic Sans MS', cursive;
+  font-family: 'Comic Sans MS';
   font-size: 1.3rem;
   color: #fd2828;
   margin-bottom: 0.75rem;
@@ -1067,7 +1067,7 @@ body {
 }
 
 .hero-card h1 {
-  font-family: 'Comic Sans MS', 'Comic Neue', cursive;
+  font-family: 'Comic Sans MS', 'Comic Neue';
   font-size: 2.5rem;
   color: #e53935; /* friendly red */
   margin-bottom: 0.5rem;
@@ -1112,7 +1112,7 @@ body {
 }
 
 .site-header .logo-text {
-  font-family: 'Comic Sans MS', cursive;
+  font-family: 'Comic Sans MS';
   font-size: 1.6rem;
   font-weight: bold;
   color: #171717;
