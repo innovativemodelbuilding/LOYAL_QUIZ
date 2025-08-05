@@ -94,20 +94,21 @@ body {
   --btn-hover: #0056b3;
 }
 
-/* QUESTION‑SPECIFIC IMAGE STYLING */
+/* ========== QUESTION-SPECIFIC IMAGE STYLING ========== */
 img.question-image {
   display: block;
-  margin: 1.5rem auto;        /* center & breathing room */
-  width: 400px;               /* fixed width */
-  height: 300px;              /* fixed height */
-  object-fit: contain;        /* or “cover” */
+  margin: 1.5rem auto;       /* center & breathing room */
+  width: 100%;               /* fluid width */
+  max-width: 400px;          /* desktop cap */
+  aspect-ratio: 4/3;         /* preserve 400×300 ratio */
+  object-fit: contain;       /* or “cover” if you prefer a crop */
   border-radius: 0.5rem;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   background: var(--light-bg);
   padding: 0.5rem;
 }
 
-/* don’t show it unless src is non‐empty */
+/* hide when no image present */
 img.question-image[src=""],
 img.question-image:not([src]) {
   display: none;
@@ -115,16 +116,39 @@ img.question-image:not([src]) {
 
 
 
-/* Quiz Container */
+/* ====================== */
+/*      Quiz Container    */
+/* ====================== */
 .quiz-container {
   background: #ffffff;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   border-radius: 1rem;
   padding: 2rem;
-  max-width: 700px;
-  margin: 4rem auto;
-  animation: fadeIn 1s ease-in-out;
+  width: 90%;            /* fluid width */
+  max-width: 700px;      /* desktop cap */
+  margin: 4rem auto;     /* vertical breathing + centered */
+  animation: fadeIn 0.5s ease-in-out;
 }
+
+/* -------- Tablets -------- */
+@media (max-width: 768px) {
+  .quiz-container {
+    width: 95%;          /* fill more of smaller screens */
+    max-width: none;     /* drop the desktop cap */
+    padding: 1.5rem;     
+    margin: 3rem auto;   
+  }
+}
+
+/* -------- Phones -------- */
+@media (max-width: 480px) {
+  .quiz-container {
+    width: 100%;         /* edge-to-edge (minus body padding) */
+    padding: 1rem;
+    margin: 2rem auto;   
+  }
+}
+
 
 /* Question Title */
 h3 {
@@ -264,24 +288,29 @@ button:hover {
   to   { transform: translateY(0);     opacity: 1; }
 }
 
+
 /* ========== Mobile / Tablet Improvements ========== */
+
 @media (max-width: 768px) {
-  .quiz-container {
-    padding: 1rem;
-    max-width: 100%;          /* never exceed viewport */
-    margin: 2rem auto;
-    box-sizing: border-box;
+  /* responsive question image */
+  img.question-image {
+    width: 90%;             /* fill most of its container */
+    max-width: none;        /* drop desktop cap */
+    aspect-ratio: 4/3;      /* preserve 400×300 ratio */
+    height: auto;           /* auto-calc height */
+    margin: 1.5rem auto;    /* same breathing room */
   }
+  
   h3 { font-size: 1.8rem; }
   .options li {
     display: flex;
-    flex-direction: row;      /* keep label + text on one line */
+    flex-direction: row;    /* keep label + text on one line */
     align-items: center;
     padding: 0.8rem 1rem;
     border-radius: 0.8rem;
   }
   .option-label {
-    font-size: 1rem;          /* same size as text */
+    font-size: 1rem;        /* same size as text */
     margin-right: 0.75rem;
   }
   .option-text { font-size: 1rem; }
@@ -295,10 +324,15 @@ button:hover {
 }
 
 @media (max-width: 480px) {
-  .quiz-container {
-    padding: 0.8rem;
+  /* tighten up the image on small phones */
+  img.question-image {
+    width: 100%;            /* full width of its container */
+    aspect-ratio: 4/3;
+    height: auto;
     margin: 1rem auto;
   }
+
+ 
   h3 {
     font-size: 1.6rem;
     text-align: center;
@@ -319,6 +353,7 @@ button:hover {
     font-size: 0.9rem;
   }
 }
+
 
 
   /* ========== Site Footer ========== */
