@@ -25,131 +25,196 @@
       <button id="back-btn" class="hidden" onclick="loadPreviousQuestion()">Back</button>
       <button id="next-btn" class="hidden" onclick="loadNextQuestion()">Next</button>
     </main>
+    
+   <script>
+  const questions = [
 
-    <script>
-        const questions = [
-          {
-            question: "Which word is the correct verb in the sentence: 'Sam ……….. cards.'",
-            options: ["closes", "opens", "plays"],
-            correct: "plays",
-            explanation: "'plays' is the correct verb that fits the sentence."
-          },
-          {
-            question: "Which word is the correct verb in the sentence: 'The cat ………on the couch'",
-            options: ["drink", "jumps", "Jump"],
-            correct: "jumps",
-            explanation: "'jumps' is the correct verb that fits the sentence."
-          },
-          {
-            question: "Which word is the correct verb in the sentence: 'The dog ……….. loud.'",
-            options: ["bark", "barks", "eat"],
-            correct: "barks",
-            explanation: "'barks' is the correct verb that fits the sentence."
-          },
-          {
-            question: "Which word is the correct verb in the sentence: 'The teacher ……..the book.'",
-            options: ["eat", "opens", "sees"],
-            correct: "opens",
-            explanation: "'opens' is the correct verb that fits the sentence."
-          },
-          {
-            question: "Which word is the correct verb in the sentence: 'Tom …………milk'",
-            options: ["sleep", "drink", "buy"],
-            correct: "drink",
-            explanation: "'drink' is the correct verb that fits the sentence."
-          },
-          {
-            question: "Which word is the correct verb in the sentence: 'The boy …………….. his mom.'",
-            options: ["see", "Jumps", "calls"],
-            correct: "calls",
-            explanation: "'calls' is the correct verb that fits the sentence."
-          },
-          {
-            question: "Which word is the correct verb in the sentence: 'The cat …………. the food on the table.'",
-            options: ["sleep", "sees", "see"],
-            correct: "sees",
-            explanation: "'sees' is the correct verb that fits the sentence."
-          },
-          {
-            question: "Which word is the correct verb in the sentence: 'The bat ……………away.'",
-            options: ["flies", "see", "fly"],
-            correct: "flies",
-            explanation: "'flies' is the correct verb that fits the sentence."
-          },
-          {
-            question: "Which word is the correct verb in the sentence: 'The policeman ……….. the thief.'",
-            options: ["open", "sleep", "catches"],
-            correct: "catches",
-            explanation: "'catches' is the correct verb that fits the sentence."
-          },
-          {
-            question: "Which word is the correct verb in the sentence: 'The girl ……. '",
-            options: ["dance", "sun", "dances"],
-            correct: "dances",
-            explanation: "'dances' is the correct verb that fits the sentence."
-          },
-          {
-            question: "Which word is the correct verb in the sentence: 'The girl ………. her father'",
-            options: ["thank", "flower", "thanks"],
-            correct: "thanks",
-            explanation: "'thanks' is the correct verb that fits the sentence."
-          },
-          {
-            question: "Which word is the correct verb in the sentence: 'The farther …………… his son at school.'",
-            options: ["explain", "sleep", "drops"],
-            correct: "drops",
-            explanation: "'drops' is the correct verb that fits the sentence."
-          },
-          {
-            question: "Which word is the correct verb in the sentence: 'The teacher ……………… Math.'",
-            options: ["teach", "write", "teaches"],
-            correct: "teaches",
-            explanation: "'teaches' is the correct verb that fits the sentence."
-          },
-          {
-            question: "Which word is the correct verb in the sentence: 'She ………… a beautiful poem'",
-            options: ["write", "writes", "sleep"],
-            correct: "writes",
-            explanation: "'writes' is the correct verb that fits the sentence."
-          },
-          {
-            question: "Which word is the correct verb in the sentence: 'He ……………..  a beautiful letter.'",
-            options: ["sleep", "write", "writes"],
-            correct: "writes",
-            explanation: "'writes' is the correct verb that fits the sentence."
-          },
-          {
-            question: "Which word is the correct verb in the sentence: 'The bell……'",
-            options: ["rings", "jumps", "ring"],
-            correct: "rings",
-            explanation: "'rings' is the correct verb that fits the sentence."
-          },
-          {
-            question: "Which word is the correct verb in the sentence: 'The doctor………………. to his patients.'",
-            options: ["talks", "open", "talk"],
-            correct: "talks",
-            explanation: "'talks' is the correct verb that fits the sentence."
-          },
-          {
-            question: "Which word is the correct verb in the sentence: 'The teacher …………….. the lesson very well.'",
-            options: ["Swim", "explains", "explain"],
-            correct: "explains",
-            explanation: "'explains' is the correct verb that fits the sentence."
-          },
-          {
-            question: "Which word is the correct verb in the sentence: 'The boy ………………. his mom.'",
-            options: ["sun", "thanks", "thank"],
-            correct: "thanks",
-            explanation: "'thanks' is the correct verb that fits the sentence."
-          },
-          {
-            question: "Which word is the correct verb in the sentence: 'The teacher ……………… English'",
-            options: ["write", "teaches", "teach"],
-            correct: "teaches",
-            explanation: "'teaches' is the correct verb that fits the sentence."
-          }
-        ];
-        </script>
+    {
+      question:
+        "<span style='color:black;'>Choose the correct tense form to complete the sentence.</span><br/>" +
+        "The brown hen _______ lost?",
+      options: ["was", "were"],
+      correct: "was",
+      explanation: "'Was' is used with singular subjects in past tense."
+    },
+
+    {
+      question:
+        "<span style='color:black;'>Choose the correct tense form to complete the sentence.</span><br/>" +
+        "The brown bear _______ large?",
+      options: ["was", "were"],
+      correct: "was",
+      explanation: "'Was' is used with singular subjects in past tense."
+    },
+
+    {
+      question:
+        "<span style='color:black;'>Choose the correct tense form to complete the sentence.</span><br/>" +
+        "The whales _______ swimming?",
+      options: ["was", "were"],
+      correct: "were",
+      explanation: "'Were' is used with plural subjects in past tense."
+    },
+
+    {
+      question:
+        "<span style='color:black;'>Choose the correct tense form to complete the sentence.</span><br/>" +
+        "The fisherman _______ sick?",
+      options: ["was", "were"],
+      correct: "was",
+      explanation: "'Was' is used with singular subjects in past tense."
+    },
+
+    {
+      question:
+        "<span style='color:black;'>Choose the correct tense form to complete the sentence.</span><br/>" +
+        "The birds _______ far away?",
+      options: ["was", "were"],
+      correct: "were",
+      explanation: "'Were' is used with plural subjects in past tense."
+    },
+
+    {
+      question:
+        "<span style='color:black;'>Choose the correct tense form to complete the sentence.</span><br/>" +
+        "They _______ new to our town?",
+      options: ["was", "were"],
+      correct: "were",
+      explanation: "'Were' is used with plural subjects in past tense."
+    },
+
+    {
+      question:
+        "<span style='color:black;'>Choose the correct tense form to complete the sentence.</span><br/>" +
+        "The ducks _______ very loud?",
+      options: ["was", "were"],
+      correct: "were",
+      explanation: "'Were' is used with plural subjects in past tense."
+    },
+
+    {
+      question:
+        "<span style='color:black;'>Choose the correct tense form to complete the sentence.</span><br/>" +
+        "The dogs _______ all gone?",
+      options: ["was", "were"],
+      correct: "were",
+      explanation: "'Were' is used with plural subjects in past tense."
+    },
+
+    {
+      question:
+        "<span style='color:black;'>Choose the correct tense form to complete the sentence.</span><br/>" +
+        "The children _______ on vacation?",
+      options: ["was", "were"],
+      correct: "were",
+      explanation: "'Were' is used with plural subjects in past tense."
+    },
+
+    {
+      question:
+        "<span style='color:black;'>Choose the correct tense form to complete the sentence.</span><br/>" +
+        "The children _______ in the pool all day?",
+      options: ["was", "were"],
+      correct: "were",
+      explanation: "'Were' is used with plural subjects in past tense."
+    },
+
+    {
+      question:
+        "<span style='color:black;'>Choose the correct tense form to complete the sentence.</span><br/>" +
+        "Mr. and Mrs. Smith _______ very upset?",
+      options: ["was", "were"],
+      correct: "were",
+      explanation: "'Were' is used with plural subjects in past tense."
+    },
+
+    {
+      question:
+        "<span style='color:black;'>Choose the correct tense form to complete the sentence.</span><br/>" +
+        "Mr. and Mrs. Smith _______ very nice people?",
+      options: ["was", "were"],
+      correct: "were",
+      explanation: "'Were' is used with plural subjects in past tense."
+    },
+
+    {
+      question:
+        "<span style='color:black;'>Choose the correct tense form to complete the sentence.</span><br/>" +
+        "Those women _______ really kind?",
+      options: ["was", "were"],
+      correct: "were",
+      explanation: "'Were' is used with plural subjects in past tense."
+    },
+
+    {
+      question:
+        "<span style='color:black;'>Choose the correct tense form to complete the sentence.</span><br/>" +
+        "Sandy and Hayfa _______ friends for many years?",
+      options: ["was", "were"],
+      correct: "were",
+      explanation: "'Were' is used with plural subjects in past tense."
+    },
+
+    {
+      question:
+        "<span style='color:black;'>Choose the correct tense form to complete the sentence.</span><br/>" +
+        "Alexandra and Tom _______ students?",
+      options: ["was", "were"],
+      correct: "were",
+      explanation: "'Were' is used with plural subjects in past tense."
+    },
+
+    {
+      question:
+        "<span style='color:black;'>Choose the correct tense form to complete the sentence.</span><br/>" +
+        "Sandy’s dress _______ on the bed?",
+      options: ["was", "were"],
+      correct: "was",
+      explanation: "'Was' is used with singular subjects in past tense."
+    },
+
+    {
+      question:
+        "<span style='color:black;'>Choose the correct tense form to complete the sentence.</span><br/>" +
+        "They _______ very happy?",
+      options: ["was", "were"],
+      correct: "were",
+      explanation: "'Were' is used with plural subjects in past tense."
+    },
+
+    {
+      question:
+        "<span style='color:black;'>Choose the correct tense form to complete the sentence.</span><br/>" +
+        "We _______ happy to go to the cinema?",
+      options: ["was", "were"],
+      correct: "were",
+      explanation: "'Were' is used with plural subjects in past tense."
+    },
+
+    {
+      question:
+        "<span style='color:black;'>Choose the correct tense form to complete the sentence.</span><br/>" +
+        "It _______ very difficult to move?",
+      options: ["was", "were"],
+      correct: "was",
+      explanation: "'Was' is used with singular subjects in past tense."
+    },
+
+    {
+      question:
+        "<span style='color:black;'>Choose the correct tense form to complete the sentence.</span><br/>" +
+        "I _______ on the phone all day?",
+      options: ["was", "were"],
+      correct: "was",
+      explanation: "'Was' is used with singular subjects in past tense."
+    }
+
+  ];
+</script>
+
+
+
+
 
   <!-- Professional Footer -->
     <div id="site-footer-placeholder"></div>

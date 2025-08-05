@@ -95,17 +95,24 @@ body {
 }
 
 /* QUESTION‑SPECIFIC IMAGE STYLING */
-.question-image {
+img.question-image {
   display: block;
   margin: 1.5rem auto;        /* center & breathing room */
   width: 400px;               /* fixed width */
   height: 300px;              /* fixed height */
-  object-fit: contain;        /* or “cover” if you want to crop to fill */
+  object-fit: contain;        /* or “cover” */
   border-radius: 0.5rem;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   background: var(--light-bg);
   padding: 0.5rem;
 }
+
+/* don’t show it unless src is non‐empty */
+img.question-image[src=""],
+img.question-image:not([src]) {
+  display: none;
+}
+
 
 
 /* Quiz Container */
@@ -421,15 +428,7 @@ width: 100%;
 height: auto;
 border-radius: 10px;
 }
-.question-image {
-display: block;
-margin: 20px auto;
-max-width: 100%;
-height: auto;
-border-radius: 8px;
-padding: 5px;
 
-}
 #timer {
 font-size: 1.2em;
 font-weight: bold;
