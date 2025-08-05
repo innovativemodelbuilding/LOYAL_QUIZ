@@ -133,7 +133,7 @@ img.question-image:not([src]) {
 /* -------- Tablets -------- */
 @media (max-width: 768px) {
   .quiz-container {
-    width: 95%;          /* fill more of smaller screens */
+    width: 85%;          /* fill more of smaller screens */
     max-width: none;     /* drop the desktop cap */
     padding: 1.5rem;     
     margin: 3rem auto;   
@@ -143,7 +143,7 @@ img.question-image:not([src]) {
 /* -------- Phones -------- */
 @media (max-width: 480px) {
   .quiz-container {
-    width: 100%;         /* edge-to-edge (minus body padding) */
+    width: 85%;         /* edge-to-edge (minus body padding) */
     padding: 1rem;
     margin: 2rem auto;   
   }
@@ -292,15 +292,17 @@ button:hover {
 /* ========== Mobile / Tablet Improvements ========== */
 
 @media (max-width: 768px) {
-  /* responsive question image */
   img.question-image {
-    width: 90%;             /* fill most of its container */
-    max-width: none;        /* drop desktop cap */
-    aspect-ratio: 4/3;      /* preserve 400×300 ratio */
-    height: auto;           /* auto-calc height */
-    margin: 1.5rem auto;    /* same breathing room */
+    display: block;       /* ensures margin:auto works */
+    width: 90%;           /* scaled down for tablets */
+    max-width: none;      /* drop any desktop cap */
+    aspect-ratio: 4/3;    /* keep proportions */
+    height: auto;         /* auto-calc height */
+    margin: 1.5rem auto;  /* vertical breathing + horizontal centering */
+    border: none;         /* remove any stray borders that might shift it */
   }
-  
+}
+
   h3 { font-size: 1.8rem; }
   .options li {
     display: flex;
