@@ -324,6 +324,7 @@ button:hover {
     font-size: 1rem;
   }
 
+
 @media (max-width: 480px) {
   /* tighten up the image on small phones */
   img.question-image {
