@@ -1,1 +1,1 @@
-# LIS-Quiz
+# LOYAL'S-MCQ
