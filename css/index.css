@@ -1,5 +1,5 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Comic Sans MS';
   margin: 0;
   padding: 0;
   background-color: #f4f4f9;
@@ -176,7 +176,7 @@ h1 {
 
 .conducted-by {
   margin-top: 20px;
-  font-style: italic;
+  font-style: italic, 'Comic Sans MS';
 }
 
 a {
@@ -589,7 +589,7 @@ nav .content {
 
 /* Global Styles */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Comic Sans MS';
   margin: 0;
   padding: 0;
   background: #f9f9f9;
@@ -843,8 +843,8 @@ button:hover {
 .index .card:nth-child(3) { --card-color: #8bc34a; }
 /* add more as you need for LKG, UKG, etc. */
 
-.startpage .card:nth-child(1) { --card-color: #42a5f5; } /* English */
-.startpage .card:nth-child(2) { --card-color: #ab47bc; } /* Maths */
+.base .card:nth-child(1) { --card-color: #42a5f5; } /* English */
+.base .card:nth-child(2) { --card-color: #ab47bc; } /* Maths */
 /* adapt for Science, etc. */
 
 
@@ -931,7 +931,7 @@ button:hover {
   border-top: 6px solid #fd2828;     /* bold red accent */
   color: #171717;                    /* near-black text */
   padding: 2rem 1rem 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Comic Sans MS';
   box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.05); /* slight top shadow */
 }
 
@@ -953,7 +953,7 @@ button:hover {
 
 .site-footer .footer-section address,
 .site-footer .footer-section p {
-  font-style: normal;
+  font-style: 'Comic Sans MS';
   line-height: 1.6;
   margin-bottom: 0.5rem;
   color: #333;
@@ -1037,7 +1037,7 @@ button:hover {
   padding: 0;
 }
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Comic Sans MS';
   background: #f9f9f9;
   color: #333;
   /* remove the old flex/center/100vh */
@@ -1074,7 +1074,7 @@ body {
 }
 
 .hero-card p {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Comic Sans MS';
   font-size: 1.2rem;
   color: #555;
 }
@@ -1282,7 +1282,7 @@ header {
 }
 
 /* center the main title on your start page */
-.startpage .page-title {
+.base .page-title {
   text-align: center;
   font-size: 2rem;       /* adjust size for kids */
   margin: 1.5em 0;       /* some breathing room above/below */
@@ -1372,3 +1372,4 @@ header {
   line-height: 1;
   color: #171717;
 }
+
