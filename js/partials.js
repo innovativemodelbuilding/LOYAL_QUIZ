@@ -83,6 +83,8 @@ const footerHtml = `
           <ul class="footer-links">
             <li><a href="${base}index.html"><i class="bi bi-house-door icon" aria-hidden="true"></i><span>  Home</span></a></li>
             <li><a href="${base}pages/contactus.html"><i class="bi bi-envelope icon" aria-hidden="true"></i><span>  Contact</span></a></li>
+            <li><a href="${base}pages/aboutus.html"><i class="bi bi-info-circle icon" aria-hidden="true"></i><span> About Us</span></a></li>
+
           </ul>
         </nav>
       </section>
@@ -91,10 +93,10 @@ const footerHtml = `
         <h4>Contact Us</h4>
         <address>
           Uthman Ibn Al-Yaman Street<br/>
-          Jeddah, Saudi Arabia<br/> <br/>
+          Jeddah, Saudi Arabia<br/>
           <a href="mailto:loyal.int.school@gmail.com">
-            <i class="bi bi-envelope-fill icon" aria-hidden="true"></i><span>   loyal.int.school@gmail.com</span>
-          </a><br/>
+            <i class="bi bi-envelope-fill icon" aria-hidden="true"></i><span>  loyal.int.school@gmail.com </span> 
+          </a>
           <a href="tel:+966548953829">
             <i class="bi bi-telephone-fill icon" aria-hidden="true"></i><span>  +966 54 895 3829</span>
           </a>
