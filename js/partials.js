@@ -1,4 +1,36 @@
 // js/partials.js
+// Ensure Bootstrap Icons CSS is loaded once (for all pages using partials.js)
+(function ensureIconStyles() {
+  const CDN_ID = 'bi-icons-cdn';
+  if (!document.getElementById(CDN_ID)) {
+    const link = document.createElement('link');
+    link.id = CDN_ID;
+    link.rel = 'stylesheet';
+    link.href =
+      'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css';
+    document.head.appendChild(link);
+  }
+
+  // Small helper styles for footer links & icons (optional; keeps it self-contained)
+  const STYLE_ID = 'partials-footer-icon-style';
+  if (!document.getElementById(STYLE_ID)) {
+    const s = document.createElement('style');
+    s.id = STYLE_ID;
+    s.textContent = `
+      .site-footer .social-links,
+      .site-footer .footer-links { list-style: none; padding: 0; margin: 0; }
+      .site-footer .social-links li { margin: 6px 0; }
+      .site-footer .social-links a,
+      .site-footer address a {
+        display: inline-flex; align-items: center; gap: 8px;
+        text-decoration: none; color: inherit;
+      }
+      .site-footer .icon { font-size: 1.2rem; line-height: 1; vertical-align: -0.125em; }
+      .site-footer a:hover { color: var(--brand, #2563eb); }
+    `;
+    document.head.appendChild(s);
+  }
+})();
 
 document.addEventListener('DOMContentLoaded', () => {
   // ─── Compute “base” so all links/images point to your repo root ───
@@ -41,45 +73,53 @@ document.addEventListener('DOMContentLoaded', () => {
   const headerEl = document.getElementById('site-header-placeholder');
   if (headerEl) headerEl.outerHTML = headerHtml;
 
-  // ─── 2) FOOTER ──────────────────────────────────────────────────────
-  const footerHtml = `
-    <footer id="contact" class="site-footer">
-      <div class="footer-inner">
-        <section class="footer-section">
-          <h4>Quick Links</h4>
-          <nav aria-label="Quick Links">
-            <ul class="footer-links">
-              <li><a href="${base}index.html">Home</a></li>
-              <li><a href="#levels">Levels</a></li>
-              <li><a href="${base}pages/contactus.html">Contact</a></li>
-            </ul>
-          </nav>
-        </section>
-        <section class="footer-section">
-          <h4>Contact Us</h4>
-          <address>
-            Uthman Ibn Al-Yaman Street<br/>
-            Jeddah, Saudi Arabia<br/>
-            <a href="mailto:loyal.int.school@gmail.com">loyal.int.school@gmail.com</a><br/>
-            <a href="tel:+966548953829">+966 54 895 3829</a>
-          </address>
-        </section>
-        <section class="footer-section social">
-          <h4>Follow Us</h4>
-          <ul class="social-links" aria-label="Social Media">
-            <li><a href="#" title="Twitter">🐦 Twitter</a></li>
-            <li><a href="#" title="Facebook">📘 Facebook</a></li>
-            <li><a href="#" title="Instagram">📸 Instagram</a></li>
+// ─── 2) FOOTER ──────────────────────────────────────────────────────
+const footerHtml = `
+  <footer id="contact" class="site-footer">
+    <div class="footer-inner">
+      <section class="footer-section">
+        <h4>Quick Links</h4>
+        <nav aria-label="Quick Links">
+          <ul class="footer-links">
+            <li><a href="${base}index.html"><i class="bi bi-house-door icon" aria-hidden="true"></i><span>  Home</span></a></li>
+            <li><a href="#levels"><i class="bi bi-list-ul icon" aria-hidden="true"></i><span>  Levels</span></a></li>
+            <li><a href="${base}pages/contactus.html"><i class="bi bi-envelope icon" aria-hidden="true"></i><span>  Contact</span></a></li>
           </ul>
-        </section>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2025 Loyal's MCQ. All rights reserved.</p>
-      </div>
-    </footer>
-  `;
-  const footerEl = document.getElementById('site-footer-placeholder');
-  if (footerEl) footerEl.outerHTML = footerHtml;
+        </nav>
+      </section>
+
+      <section class="footer-section">
+        <h4>Contact Us</h4>
+        <address>
+          Uthman Ibn Al-Yaman Street<br/>
+          Jeddah, Saudi Arabia<br/> <br/>
+          <a href="mailto:loyal.int.school@gmail.com">
+            <i class="bi bi-envelope-fill icon" aria-hidden="true"></i><span>   loyal.int.school@gmail.com</span>
+          </a><br/>
+          <a href="tel:+966548953829">
+            <i class="bi bi-telephone-fill icon" aria-hidden="true"></i><span>  +966 54 895 3829</span>
+          </a>
+        </address>
+      </section>
+
+      <section class="footer-section social">
+        <h4>Follow Us</h4>
+        <ul class="social-links" aria-label="Social Media">
+          <li><a href="#" title="Twitter / X"><i class="bi bi-twitter-x icon" aria-hidden="true"></i><span>Twitter / X</span></a></li>
+          <li><a href="#" title="Facebook"><i class="bi bi-facebook icon" aria-hidden="true"></i><span>Facebook</span></a></li>
+          <li><a href="#" title="Instagram"><i class="bi bi-instagram icon" aria-hidden="true"></i><span>Instagram</span></a></li>
+        </ul>
+      </section>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Loyal's M.C.Q/Innovative model building. All rights reserved.</p>
+    </div>
+  </footer>
+`;
+const footerEl = document.getElementById('site-footer-placeholder');
+if (footerEl) footerEl.outerHTML = footerHtml;
+
+
 
   // ─── 3) HAMBURGER MENU TOGGLE ───────────────────────────────────────
   const ham = document.getElementById('hamburger');
