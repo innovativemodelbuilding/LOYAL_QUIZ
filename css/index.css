@@ -1631,17 +1631,18 @@ header {
 }
 
 body, .logo-text, header, .hero-card h1, .hero-card p {
-  font-family: 'Comic Sans MS', 'Comic Neue', cursive, sans-serif;
+  font-family: 'Comic Sans MS';
 }
 
 @media (max-width: 768px) {
   body {
-    font-family: 'Comic Sans MS', 'Comic Neue', cursive, sans-serif;
+    font-family: 'Comic Sans MS', 'Comic Neue';
   }
 }
 
 @media (max-width: 480px) {
   body {
-    font-family: 'Comic Sans MS', 'Comic Neue', cursive, sans-serif;
+    font-family: 'Comic Sans MS', 'Comic Neue';
   }
 }
+
