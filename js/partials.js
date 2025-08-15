@@ -82,7 +82,6 @@ const footerHtml = `
         <nav aria-label="Quick Links">
           <ul class="footer-links">
             <li><a href="${base}index.html"><i class="bi bi-house-door icon" aria-hidden="true"></i><span>  Home</span></a></li>
-            <li><a href="#levels"><i class="bi bi-list-ul icon" aria-hidden="true"></i><span>  Levels</span></a></li>
             <li><a href="${base}pages/contactus.html"><i class="bi bi-envelope icon" aria-hidden="true"></i><span>  Contact</span></a></li>
           </ul>
         </nav>
