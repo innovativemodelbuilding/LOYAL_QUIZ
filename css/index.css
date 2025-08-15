@@ -1627,22 +1627,25 @@ header {
   font-family: 'Comic Sans MS';
   src: url('/fonts/comic-sans-ms.woff2') format('woff2'),
        url('/fonts/comic-sans-ms.woff') format('woff');
-  font-display: swap;
+  font-display: swap; /* Ensures text becomes visible using a fallback if the custom font takes a while to load, then swaps to Comic Sans MS once loaded */
 }
 
+/* Apply Comic Sans MS to all elements, ensuring consistency */
 body, .logo-text, header, .hero-card h1, .hero-card p {
-  font-family: 'Comic Sans MS';
+  font-family: 'Comic Sans MS', sans-serif; /* Added a generic fallback for cases where the custom font might fail to load */
 }
 
+/* You don't need these separate media queries for font-family if you've applied it to 'body' above. */
+/* If you want to change font-size for mobile, you'd do it like this: */
 @media (max-width: 768px) {
   body {
-    font-family: 'Comic Sans MS', 'Comic Neue';
+    font-size: 0.9rem; /* Example: slightly smaller font size for mobile */
   }
 }
 
 @media (max-width: 480px) {
   body {
-    font-family: 'Comic Sans MS', 'Comic Neue';
+    font-size: 0.8rem; /* Example: even smaller font size for very small screens */
   }
 }
 
