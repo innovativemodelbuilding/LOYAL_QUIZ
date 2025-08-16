@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Common Nouns</title>
+    <!-- point to your question.css in the root css/ folder -->
+    <link rel="stylesheet" href="../../../css/question.css" />
+  </head>
+  <body>
+
+   <!-- Sticky Header -->
+    <div id="site-header-placeholder"></div>
+
+    <!-- Quiz Content -->
+    <main class="quiz-container">
+      <div class="question-section">
+        <h3 id="question-text">Loading...</h3>
+        <ul class="options" id="options-list">
+          <!-- Options dynamically generated -->
+        </ul>
+      </div>
+      <div id="feedback" class="hidden"></div>
+      <div id="explanation" class="hidden"></div>
+      <button id="back-btn" class="hidden" onclick="loadPreviousQuestion()">Back</button>
+      <button id="next-btn" class="hidden" onclick="loadNextQuestion()">Next</button>
+    </main>
+
+<script>
+  const questions = [
+    {
+      question: "Choose the correct verb to complete the sentence. <br> <span style='color:black;'> I …….. a cold last month.</span>",
+      options: ["have", "had"],
+      correct: "had",
+      explanation: "'had' is correct because it shows past possession."
+    },
+    {
+      question: "Choose the correct verb to complete the sentence. <br> <span style='color:black;'> He ……… a stroke last week.</span>",
+      options: ["have", "had"],
+      correct: "had",
+      explanation: "'had' is correct as it indicates something in the past."
+    },
+    {
+      question: "Choose the correct verb to complete the sentence. <br> <span style='color:black;'> She ……….. a beautiful vacation last year.</span>",
+      options: ["have", "had"],
+      correct: "had",
+      explanation: "'had' is correct for past events."
+    },
+    {
+      question: "Choose the correct verb to complete the sentence. <br> <span style='color:black;'> We …………. to go to the hospital last night.</span>",
+      options: ["have", "had"],
+      correct: "had",
+      explanation: "'had' is correct because it happened yesterday."
+    },
+    {
+      question: "Choose the correct verb to complete the sentence. <br> <span style='color:black;'> They ……… to leave to Germany last week.</span>",
+      options: ["have", "had"],
+      correct: "had",
+      explanation: "'had' is correct for past necessity."
+    },
+    {
+      question: "Choose the correct verb to complete the sentence. <br> <span style='color:black;'> You ……….. the flu last week.</span>",
+      options: ["have", "had"],
+      correct: "had",
+      explanation: "'had' is correct to show past illness."
+    },
+    {
+      question: "Choose the correct verb to complete the sentence. <br> <span style='color:black;'> She …….. a red bicycle when she was a child.</span>",
+      options: ["have", "had"],
+      correct: "had",
+      explanation: "'had' is correct for past possession."
+    },
+    {
+      question: "Choose the correct verb to complete the sentence. <br> <span style='color:black;'> We……… lunch at 1 P.M. yesterday.</span>",
+      options: ["have", "had"],
+      correct: "had",
+      explanation: "'had' is correct for past actions."
+    },
+    {
+      question: "Choose the correct verb to complete the sentence. <br> <span style='color:black;'> He …….. a bad headache this morning.</span>",
+      options: ["have", "had"],
+      correct: "had",
+      explanation: "'had' is correct for past illness."
+    },
+    {
+      question: "Choose the correct verb to complete the sentence. <br> <span style='color:black;'> I ……….. some free time yesterday.</span>",
+      options: ["have", "had"],
+      correct: "had",
+      explanation: "'had' is correct for past free time."
+    },
+    {
+      question: "Choose the correct verb to complete the sentence. <br> <span style='color:black;'> We ……… a car accident last week.</span>",
+      options: ["have", "had"],
+      correct: "had",
+      explanation: "'had' is correct because it is a past incident."
+    },
+    {
+      question: "Choose the correct verb to complete the sentence. <br> <span style='color:black;'> They ……… three dogs and a cat.</span>",
+      options: ["have", "had"],
+      correct: "had",
+      explanation: "'had' is correct for possession in the past."
+    },
+    {
+      question: "Choose the correct verb to complete the sentence. <br> <span style='color:black;'> I …….. pancakes yesterday.</span>",
+      options: ["have", "had"],
+      correct: "had",
+      explanation: "'had' is correct for past meals."
+    },
+    {
+      question: "Choose the correct verb to complete the sentence. <br> <span style='color:black;'> She………… a long day at work.</span>",
+      options: ["have", "had"],
+      correct: "had",
+      explanation: "'had' is correct for past experiences."
+    },
+    {
+      question: "Choose the correct verb to complete the sentence. <br> <span style='color:black;'> We……… a barbecue on Sunday.</span>",
+      options: ["have", "had"],
+      correct: "had",
+      explanation: "'had' is correct for past events."
+    },
+    {
+      question: "Choose the correct verb to complete the sentence. <br> <span style='color:black;'> They…………… Pizza for dinner yesterday.</span>",
+      options: ["have", "had"],
+      correct: "had",
+      explanation: "'had' is correct because it happened yesterday."
+    },
+    {
+      question: "Choose the correct verb to complete the sentence. <br> <span style='color:black;'> He………… a sore throat last week.</span>",
+      options: ["have", "had"],
+      correct: "had",
+      explanation: "'had' is correct for past health condition."
+    },
+    {
+      question: "Choose the correct verb to complete the sentence. <br> <span style='color:black;'> The team ……. a great season.</span>",
+      options: ["have", "had"],
+      correct: "had",
+      explanation: "'had' is correct for past achievements."
+    },
+    {
+      question: "Choose the correct verb to complete the sentence. <br> <span style='color:black;'> We……….. a picnic last Sunday.</span>",
+      options: ["have", "had"],
+      correct: "had",
+      explanation: "'had' is correct for past activities."
+    },
+    {
+      question: "Choose the correct verb to complete the sentence. <br> <span style='color:black;'> I ……..…. five different jobs last year.</span>",
+      options: ["have", "had"],
+      correct: "had",
+      explanation: "'had' is correct to indicate past experiences."
+    }
+  ];
+</script>
+
+  <!-- Professional Footer -->
+    <div id="site-footer-placeholder"></div>
+    <!-- point to your main quiz logic -->
+    <script src="../../../js/script.js"></script>
+    <script src="../../../js/partials.js"></script>
+  </body>
+</html>
